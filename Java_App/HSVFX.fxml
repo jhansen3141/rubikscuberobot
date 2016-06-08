@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXControllerHSV">
+   <right>
+      <VBox prefHeight="200.0" prefWidth="190.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="H Start">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Slider fx:id="hStartSlider" blockIncrement="1" max="180" min="0" value="20">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Slider>
+            <Label text="H End">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Slider fx:id="hStopSlider" blockIncrement="1" max="180" min="0" value="50">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Slider>
+            <Label text="S Start">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Slider fx:id="sStartSlider" blockIncrement="1" max="255" min="0" value="60">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Slider>
+            <Label text="S End">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Slider fx:id="sStopSlider" blockIncrement="1" max="255" min="0" value="200">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Slider>
+            <Label text="V Start">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Slider fx:id="vStartSlider" blockIncrement="1" max="255" min="0" value="50">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Slider>
+            <Label text="V End">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Slider fx:id="vStopSlider" blockIncrement="1" max="255" min="0" value="255">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Slider>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="setRedButton" mnemonicParsing="false" onAction="#setRed" prefHeight="25.0" prefWidth="85.0" text="Set Red">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="loadRedButton" mnemonicParsing="false" onAction="#loadRed" prefWidth="85.0" text="Load Red">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="setBlueButton" mnemonicParsing="false" onAction="#setBlue" prefWidth="85.0" text="Set Blue">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="loadBlueButton" mnemonicParsing="false" onAction="#loadBlue" prefWidth="85.0" text="Load Blue">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="setGreenButton" mnemonicParsing="false" onAction="#setGreen" prefWidth="85.0" text="Set Green">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="loadGreenButton" mnemonicParsing="false" onAction="#loadGreen" prefWidth="85.0" text="Load Green">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="setOrangeButton" mnemonicParsing="false" onAction="#setOrange" prefWidth="85.0" text="Set Orange">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="loadOrangeButton" mnemonicParsing="false" onAction="#loadOrange" prefWidth="85.0" text="Load Orange">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="setYellowButton" mnemonicParsing="false" onAction="#setYellow" prefHeight="25.0" prefWidth="85.0" text="Set Yellow">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="loadYellowButton" mnemonicParsing="false" onAction="#loadYellow" prefWidth="85.0" text="Load Yellow">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="setWhiteButton" mnemonicParsing="false" onAction="#setWhite" prefWidth="85.0" text="Set White">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="loadWhiteButton" mnemonicParsing="false" onAction="#loadWhite" prefWidth="85.0" text="Load White">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="maskImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin></ImageView>
+            <ImageView fx:id="morphImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin></ImageView>
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="800.0">
+               <children>
+                  <Button fx:id="startButton" mnemonicParsing="false" onAction="#startCamera" text="Start Camera">
+                     <HBox.margin>
+                        <Insets left="430.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" text="Back">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox>
+               <children>
+                  <Label fx:id="hsvCurrentValues">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="originalFrame" fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="showTopButton" mnemonicParsing="false" onAction="#showTop" prefWidth="60.0" text="Top">
+                           <HBox.margin>
+                              <Insets left="90.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="showBottomButton" mnemonicParsing="false" onAction="#showBottom" prefWidth="60.0" text="Bottom">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="showLeftButton" mnemonicParsing="false" onAction="#showLeft" prefWidth="60.0" text="Left">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="showRightButton" mnemonicParsing="false" onAction="#showRight" prefWidth="60.0" text="Right">
+                           <HBox.margin>
+                              <Insets left="90.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="showFrontButton" mnemonicParsing="false" onAction="#showFront" prefWidth="60.0" text="Front">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="showBackButton" mnemonicParsing="false" onAction="#showBack" prefWidth="60.0" text="Back">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ChoiceBox fx:id="comBox" prefWidth="150.0">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <Button fx:id="connectButton" mnemonicParsing="false" onAction="#serConnect" prefWidth="75.0" text="Connect">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="serRefreshButton" mnemonicParsing="false" onAction="#serRefresh" prefWidth="75.0" text="Refresh">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="disconnectButton" mnemonicParsing="false" onAction="#serDisconnect" prefWidth="75.0" text="Disconnect">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

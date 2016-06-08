@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXController">
+   <bottom>
+      <HBox prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="startButton" mnemonicParsing="false" onAction="#startCamera" prefWidth="90.0" text="Start Camera">
+               <HBox.margin>
+                  <Insets left="300.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="startHSVButton" mnemonicParsing="false" onAction="#startHSV" prefWidth="90.0" text="HSV">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="startCaptureButton" mnemonicParsing="false" onAction="#startCapture" prefWidth="90.0" text="Start Capture">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="solveButton" mnemonicParsing="false" onAction="#solveCube" prefWidth="90.0" text="Solve Cube">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="topImage" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="150.0" top="5.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../blue.png" />
+               </image>
+            </ImageView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="leftImage" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../orange.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="frontImage" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../white.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="rightImage" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../red.png" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+            <ImageView fx:id="bottomImage" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="150.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../green.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="backImage" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="150.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../yellow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </right>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ChoiceBox fx:id="comBox" prefWidth="150.0">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <Button fx:id="connectButton" mnemonicParsing="false" onAction="#serConnect" prefWidth="75.0" text="Connect">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="serRefreshButton" mnemonicParsing="false" onAction="#serRefresh" prefWidth="75.0" text="Refresh">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="disconnectButton" mnemonicParsing="false" onAction="#serDisconnect" prefWidth="75.0" text="Disconnect">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="currentFrame" fitHeight="400.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="frontPButton" mnemonicParsing="false" onAction="#moveFrontP" prefWidth="60.0" text="Front +">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="frontNButton" mnemonicParsing="false" onAction="#moveFrontN" prefWidth="60.0" text="Front -">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="leftPButton" mnemonicParsing="false" onAction="#moveLeftP" prefWidth="60.0" text="Left +" />
+                        <Button fx:id="leftNButton" mnemonicParsing="false" onAction="#moveLeftN" prefWidth="60.0" text="Left -">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="rightPButton" mnemonicParsing="false" onAction="#moveRightP" prefWidth="60.0" text="Right +" />
+                        <Button fx:id="rightNButton" mnemonicParsing="false" onAction="#moveRightN" prefWidth="60.0" text="Right -">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="backPButton" mnemonicParsing="false" onAction="#moveBackP" prefWidth="60.0" text="Back +" />
+                        <Button fx:id="backNButton" mnemonicParsing="false" onAction="#moveBackN" prefWidth="60.0" text="Back -">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
